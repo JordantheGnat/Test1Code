@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">codefortest</string>
+    <string name="Pop_ID">Pop ID</string>
+    <string name="Pop_Name">Pop Name</string>
+    <string name="Pop_Num">Pop Number</string>
+    <string name="Pop_Type">Pop Type</string>
+    <string name="Pop_Fandom">Pop Fandom</string>
+    <string name="Pop_On">Pop On</string>
+    <string name="Pop_Ultimate">Pop Ultimate</string>
+    <string name="Pop_Price">Pop Price</string>
+    <string name="query">Query All</string>
+    <string name="update">Update</string>
+    <string name="insert">Insert</string>
+    <string name="previous"> &lt; </string>
+    <string name="dashLabel">-</string>
+    <string name="next"> &gt; </string>
+    <string name="delete">Delete</string>
+    <string name="authority">com.mobile.provider</string>
+    <string name="read_permission">com.example.PopProvider.permission.READ_PERMISSION</string>
+    <string name="write_permission">com.example.PopProvider.permission.WRITE_PERMISSION</string>
+</resources>

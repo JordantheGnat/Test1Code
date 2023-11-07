@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/pop_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="@string/Pop_Price"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/pop_ultimate"
+        app:layout_constraintTop_toBottomOf="@+id/pop_ultimate" />
+
+    <EditText
+        android:id="@+id/pop_ultimate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:ems="10"
+        android:hint="@string/Pop_Ultimate"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/pop_fandom"
+        tools:layout_editor_absoluteX="112dp" />
+
+    <EditText
+        android:id="@+id/pop_fandom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="@string/Pop_Fandom"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/pop_type"
+        app:layout_constraintTop_toBottomOf="@+id/pop_type" />
+
+    <EditText
+        android:id="@+id/_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="@string/Pop_ID"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <requestFocus
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </EditText>
+
+    <EditText
+        android:id="@+id/pop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:ems="10"
+        android:hint="@string/Pop_Name"
+        android:inputType="none"
+        app:layout_constraintStart_toStartOf="@+id/_id"
+        app:layout_constraintTop_toBottomOf="@+id/_id">
+
+        <requestFocus
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </EditText>
+
+
+    <Button
+        android:id="@+id/insertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/insert"
+        app:layout_constraintBaseline_toBaselineOf="@+id/updateButton"
+        app:layout_constraintEnd_toStartOf="@+id/updateButton" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="102dp"
+        android:text="@string/update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_price" />
+
+    <Button
+        android:id="@+id/queryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="150dp"
+        android:text="@string/query"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/insertButton" />
+
+    <Button
+        android:id="@+id/previousButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="548dp"
+        android:text="@string/previous"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:text="@string/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/previousButton" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="150dp"
+        android:text="@string/delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/queryButton" />
+
+    <EditText
+        android:id="@+id/pop_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Pop Number"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/pop_name"
+        app:layout_constraintTop_toBottomOf="@+id/pop_name">
+
+        <requestFocus
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </EditText>
+
+    <EditText
+        android:id="@+id/pop_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Pop Type"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/pop_num"
+        app:layout_constraintTop_toBottomOf="@+id/pop_num" />
+
+    <TextView
+        android:id="@+id/unique_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="524dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:layout_constraintStart_toEndOf="@+id/previousButton"
+        app:layout_constraintTop_toTopOf="@+id/separator" />
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="1dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/dashLabel"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:layout_constraintStart_toEndOf="@+id/unique_id"
+        app:layout_constraintTop_toBottomOf="@+id/queryButton" />
+
+    <TextView
+        android:id="@+id/fnameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:layout_constraintBaseline_toBaselineOf="@+id/separator"
+        app:layout_constraintStart_toEndOf="@+id/separator" />
+
+    <TextView
+        android:id="@+id/lnameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:layout_constraintBaseline_toBaselineOf="@+id/separator"
+        app:layout_constraintStart_toEndOf="@+id/fnameTextView" />
+
+    <Switch
+        android:id="@+id/pop_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="166dp"
+        android:text="@string/Pop_On"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_fandom" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

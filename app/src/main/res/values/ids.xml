@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="LinearLayout1" type="id" />
+    <item name="insertButton" type="id" />
+    <item name="updateButton" type="id" />
+    <item name="pop_type" type="id" />
+    <item name="queryButton" type="id" />
+    <item name="previousButton" type="id" />
+    <item name="nextButton" type="id" />
+    <item name="deleteButton" type="id" />
+    <item name="pop_num" type="id" />
+    <item name="unique_id" type="id" />
+    <item name="separator" type="id" />
+    <item name="fnameTextView" type="id" />
+    <item name="lnameTextView" type="id" />
+    <item name="_idText" type="id" />
+    <item name="lName_label" type="id" />
+</resources>
