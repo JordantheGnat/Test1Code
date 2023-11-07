@@ -26,8 +26,9 @@
         android:ems="10"
         android:hint="@string/Pop_Ultimate"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/pop_fandom"
-        tools:layout_editor_absoluteX="112dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_fandom" />
 
     <EditText
         android:id="@+id/pop_fandom"
@@ -129,6 +130,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="150dp"
         android:text="@string/delete"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/queryButton" />
 
@@ -173,8 +175,8 @@
         android:id="@+id/separator"
         android:layout_width="1dp"
         android:layout_height="23dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/dashLabel"
         android:textAppearance="?android:attr/textAppearanceLarge"
         app:layout_constraintStart_toEndOf="@+id/unique_id"
@@ -193,7 +195,7 @@
         android:id="@+id/lnameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="4dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         app:layout_constraintBaseline_toBaselineOf="@+id/separator"
         app:layout_constraintStart_toEndOf="@+id/fnameTextView" />

@@ -95,7 +95,7 @@ public class PopProvider extends ContentProvider {
         String popNumb = values.getAsString(COLUMN_POP_NUMBER).trim();
         String popType = values.getAsString(COLUMN_POP_TYPE).trim();
         String popFandom = values.getAsString(COLUMN_FANDOM).trim();
-        String popOn = values.getAsString(COLUMN_ON).trim();
+        Boolean popOn = values.getAsBoolean(COLUMN_ON);//this does register as false, but for some reason in values it registers as Pop On, which is it's string resource
         String popUlt = values.getAsString(COLUMN_ULTIMATE).trim();
         String popPrice = values.getAsString(COLUMN_PRICE).trim();
 
@@ -103,6 +103,12 @@ public class PopProvider extends ContentProvider {
             return null;
 
         if (popName.equals(""))
+            return null;
+        if (popNumb.equals(""))
+            return null;
+        if (popType.equals("")||popFandom.equals("")||popOn.equals(""))
+            return null;
+        if(popUlt.equals("")||popPrice.equals(""))
             return null;
 
         long id = mOpenHelper.getWritableDatabase().insert(TABLE_FUNKO_POP_TABLE, null, values);

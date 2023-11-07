@@ -62,30 +62,27 @@ public class MainActivity extends Activity {
                     PopProvider.COLUMN_POP_NAME + " = ? " + " AND " +
                     PopProvider.COLUMN_POP_NUMBER+ " = ? "+ " AND " +
                     PopProvider.COLUMN_POP_TYPE + " = ? " + " AND " +
-                    PopProvider.COLUMN_FANDOM + " = ? ";
-                    PopProvider.
-
-            String[] mSelectionArgs = { fnameTv.getText().toString().trim(),
-                    lnameTv.getText().toString().trim() };
-
-            int mRowsDeleted = getContentResolver().delete(PopProvider.CONTENT_URI, mSelectionClause,
-                    mSelectionArgs);
-
+                    PopProvider.COLUMN_FANDOM + " = ? "   + " AND " +
+                    PopProvider.COLUMN_ON + " = ? "       + " AND " +
+                    PopProvider.COLUMN_ULTIMATE + " = ? " + " AND " +
+                    PopProvider.COLUMN_PRICE +" = ?";
+            String[] mSelectionArgs = {};
+            int mRowsDeleted = getContentResolver().delete(PopProvider.CONTENT_URI,mSelectionClause,mSelectionArgs);
             clear();
         }
     };
 
-    View.OnClickListener insertListener = new View.OnClickListener() {
+    final View.OnClickListener insertListener = new View.OnClickListener() {
 
         @Override
         public void onClick(View v) {
             ContentValues mNewValues = new ContentValues();
-
             mNewValues.put(PopProvider.COLUMN_ID, popId.getText().toString().trim());
             mNewValues.put(PopProvider.COLUMN_POP_NAME, popName.getText().toString().trim());
             mNewValues.put(PopProvider.COLUMN_POP_NUMBER, popName.getText().toString().trim());
             mNewValues.put(PopProvider.COLUMN_POP_TYPE, popNum.getText().toString().trim());
             mNewValues.put(PopProvider.COLUMN_FANDOM, popFandom.getText().toString().trim());
+            mNewValues.put(PopProvider.COLUMN_ON,popOn.isChecked());
             mNewValues.put(PopProvider.COLUMN_ON, popOn.getText().toString().trim());
             mNewValues.put(PopProvider.COLUMN_ULTIMATE, popUlti.getText().toString().trim());
             mNewValues.put(PopProvider.COLUMN_PRICE, popPrice.getText().toString().trim());
