@@ -3,6 +3,7 @@ package com.example.codefortest;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,13 +27,23 @@ public class MainActivity extends Activity {
     EditText popUlti;
     EditText popPrice;
     TextView idTv;
-    TextView fnameTv;
-    TextView lnameTv;
+    TextView popIdTxtView;
+    TextView popNameTxtView;
 
     Cursor mCursor;
+    Uri provideUri = PopProvider.CONTENT_URI;
 
     //Listeners
-
+    String[]dbColumns={
+            PopProvider.COLUMN_ID,
+            PopProvider.COLUMN_POP_NUMBER,
+            PopProvider.COLUMN_POP_NUMBER,
+            PopProvider.COLUMN_POP_TYPE,
+            PopProvider.COLUMN_FANDOM,
+            PopProvider.COLUMN_ON,
+            PopProvider.COLUMN_ULTIMATE,
+            PopProvider.COLUMN_PRICE
+    };
     View.OnClickListener updateListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -44,8 +55,8 @@ public class MainActivity extends Activity {
             String mSelectionClause = PopProvider.COLUMN_ID + " = ? ";
 //                + " AND " + PopProvider.COLUMN_POP_NAME + " = ? ";
 
-            String[] mSelectionArgs = { fnameTv.getText().toString().trim()};
-//                , lnameTv.getText().toString().trim() };
+            String[] mSelectionArgs = { popIdTxtView.getText().toString().trim()};
+//                , popNameTxtView.getText().toString().trim() };
 
             int numRowsUpdates= getContentResolver().update(PopProvider.CONTENT_URI, mUpdateValues,
                     mSelectionClause, mSelectionArgs);
@@ -66,9 +77,10 @@ public class MainActivity extends Activity {
                     PopProvider.COLUMN_ON + " = ? "       + " AND " +
                     PopProvider.COLUMN_ULTIMATE + " = ? " + " AND " +
                     PopProvider.COLUMN_PRICE +" = ?";
-            String[] mSelectionArgs = {};
+            String[] mSelectionArgs = {popIdTxtView.getText().toString().trim(),popNameTxtView.getText().toString().trim()};
             int mRowsDeleted = getContentResolver().delete(PopProvider.CONTENT_URI,mSelectionClause,mSelectionArgs);
             clear();
+            mCursor = getContentResolver().query(provideUri, dbColumns, null, null, null);
         }
     };
 
@@ -86,9 +98,13 @@ public class MainActivity extends Activity {
             mNewValues.put(PopProvider.COLUMN_ON, popOn.getText().toString().trim());
             mNewValues.put(PopProvider.COLUMN_ULTIMATE, popUlti.getText().toString().trim());
             mNewValues.put(PopProvider.COLUMN_PRICE, popPrice.getText().toString().trim());
-            getContentResolver().insert(PopProvider.CONTENT_URI, mNewValues);
+            if(getContentResolver().insert(PopProvider.CONTENT_URI, mNewValues)==null){
+                return;
 
-            clear();
+            }else{
+                clear();
+            }
+            mCursor = getContentResolver().query(provideUri, dbColumns, null, null, null);
         }
     };
 
@@ -122,6 +138,7 @@ public class MainActivity extends Activity {
     View.OnClickListener nextListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
             if (mCursor != null) {
                 if (!mCursor.moveToNext()) {
                     mCursor.moveToFirst();
@@ -152,8 +169,8 @@ public class MainActivity extends Activity {
         deleteButton = findViewById(R.id.deleteButton);
 
         idTv = findViewById(R.id.unique_id);
-        fnameTv = findViewById(R.id.fnameTextView);
-        lnameTv = findViewById(R.id.lnameTextView);
+        popIdTxtView = findViewById(R.id.fnameTextView);
+        popNameTxtView = findViewById(R.id.lnameTextView);
 
         nextButton = findViewById(R.id.nextButton);
         previousButton = findViewById(R.id.previousButton);
@@ -174,8 +191,8 @@ public class MainActivity extends Activity {
     private void setViews() {
         idTv.setText(mCursor.getString(0));
         String text1 = mCursor.getString(1) + " ";
-        fnameTv.setText(text1);
-        lnameTv.setText(mCursor.getString(2));
+        popIdTxtView.setText(text1);
+        popNameTxtView.setText(mCursor.getString(2));
     }
 
     private void clear() {
@@ -190,8 +207,8 @@ public class MainActivity extends Activity {
         popPrice.setText("");
 
         idTv.setText("");
-        fnameTv.setText("");
-        lnameTv.setText("");
+        popIdTxtView.setText("");
+        popNameTxtView.setText("");
 
         mCursor = null;
     }

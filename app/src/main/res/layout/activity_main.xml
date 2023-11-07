@@ -14,7 +14,7 @@
         android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="@string/Pop_Price"
-        android:inputType="text"
+        android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="@+id/pop_ultimate"
         app:layout_constraintTop_toBottomOf="@+id/pop_ultimate" />
 
@@ -175,30 +175,32 @@
         android:id="@+id/separator"
         android:layout_width="1dp"
         android:layout_height="23dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="447dp"
         android:text="@string/dashLabel"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        app:layout_constraintStart_toEndOf="@+id/unique_id"
-        app:layout_constraintTop_toBottomOf="@+id/queryButton" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/fnameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="447dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        app:layout_constraintBaseline_toBaselineOf="@+id/separator"
-        app:layout_constraintStart_toEndOf="@+id/separator" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/lnameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="447dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        app:layout_constraintBaseline_toBaselineOf="@+id/separator"
-        app:layout_constraintStart_toEndOf="@+id/fnameTextView" />
+        app:layout_constraintStart_toEndOf="@+id/fnameTextView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
         android:id="@+id/pop_on"
